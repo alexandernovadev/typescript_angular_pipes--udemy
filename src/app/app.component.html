@@ -1,0 +1,100 @@
+<div class="container">
+   <br>
+   <h1>Pipes</h1>
+   <hr>
+   <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{nombre}}</th>
+        <td>uppercase</td>
+        <td>{{nombre | uppercase}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{nombre}}</th>
+        <td>lowercase</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{nombre}}</th>
+        <td>slice:3 corta las primeras tres pocisiones e imprime el resto</td>
+        <td>{{nombre | slice:3}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">{{nombre}}</th>
+        <td>slice:0:4 corta e imprime las primeras tres</td>
+        <td>{{nombre | slice:0:4}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">{{arreglo}}</th>
+        <td>slice:0:5 cou un arreglo del 0 al 5</td>
+        <td>{{arreglo | slice:0:5}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">{{numero}}</th>
+        <td>numero</td>
+        <td>{{numero | number:'1.0-0'}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">{{numero}}</th>
+        <td>Porcentaje</td>
+        <td>{{porcentaje | percent:'1.0-2'}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">{{numero}}</th>
+        <td>Currency, mas para modena</td>
+        <td>{{numero | currency:'COP': '$':'1.0-2'}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Objeto</th>
+        <td>Tipo Json</td>
+        <td>{{object.nombre| json}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Async</th>
+        <td>Async</td>
+        <td>{{promesa| async}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">{{today}}</th>
+        <td>Date</td>
+        <td>{{today | date:'fullDate'}}</td>
+      </tr>
+
+      <tr>
+          <th scope="row">{{nombreee}}</th>
+          <td>Password tarea |  Pass:{{activar}} | 
+          <button (click)="activar = !activar"
+          class="btn btn-outline-primary">On/off</button></td>
+          <td>{{nombreee | mostarocultarpass:activar}}</td>
+        </tr>
+  
+
+     
+    </tbody>
+  </table>
+</div>
+
+<ul>
+  Esto me acuerda que se puede hacer una navegador de pagina; Siguiente -anterior ?? si
+  <li *ngFor="let item of arreglo | slice:0:3" > {{ item }} </li>
+</ul>
+
+<h3>Video Youtube</h3>
+<div class="container" style="position: flex; with:20%">
+    <iframe width="560" height="315" [src]="variable | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
